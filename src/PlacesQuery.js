@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 function Consulta() {
   const { loading, error, data } = useQuery(gql`
     {
-      characters {
+      locations {
         results {
           id
           name
@@ -15,17 +15,17 @@ function Consulta() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.characters.results.map(({ id, name }) => (
+  return data.locations.results.map(({ id, name }) => (
     <div key={id}>
       <p>{name}</p>
     </div>
   ));
 }
 
-export default function CharactersQuery() {
+export default function PlacesQuery() {
   return (
     <>
-      <h1>Personajes de Rick And Morty</h1>
+      <h1>Places</h1>
       <Consulta />
     </>
   );

@@ -1,13 +1,11 @@
 import "./styles.css";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  Query,
-  gql
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import CharactersQuery from "./CharactersQuery";
+import EpisodesQuery from "./EpisodesQuery";
+import PlacesQuery from "./PlacesQuery";
+import Menu from "./Menu";
+import Footer from "./Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //cliente
 const client = new ApolloClient({
   //url de api
@@ -18,10 +16,25 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <>
-      <ApolloProvider client={client}>
-        <h1>Probando GraphQl</h1>
-        <CharactersQuery />
-      </ApolloProvider>
+      <Router>
+        <ApolloProvider client={client}>
+          <Menu />
+          <div className="container">
+            <Switch>
+              <Route path="/character" exact>
+                <CharactersQuery />
+              </Route>
+              <Route path="/episodes">
+                <EpisodesQuery />
+              </Route>
+              <Route path="/places" exact>
+                <PlacesQuery />
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
+        </ApolloProvider>
+      </Router>
     </>
   );
 }
