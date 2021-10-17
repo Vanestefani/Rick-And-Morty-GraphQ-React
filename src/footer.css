@@ -1,0 +1,13 @@
+footer {
+  width: 100%;
+  background: #fff;
+
+  padding: 20px;
+}
+footer i {
+  float: right;
+  color: #000;
+  border-right: #000;
+  border-right-style: solid;
+  border-right-width: 2px;
+}

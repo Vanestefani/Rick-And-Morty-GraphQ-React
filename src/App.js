@@ -19,9 +19,9 @@ export default function App() {
       <Router>
         <ApolloProvider client={client}>
           <Menu />
-          <div className="container">
+          <div class="container">
             <Switch>
-              <Route path="/character" exact>
+              <Route path="/" exact>
                 <CharactersQuery />
               </Route>
               <Route path="/episodes">
