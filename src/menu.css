@@ -4,8 +4,15 @@
   padding: 0%;
   margin: 0;
   margin-left: 10px;
-  flex: 1;
+
   font-size: 20px;
+}
+.logo img {
+  width: 100px;
+  padding: 0%;
+  margin: 0;
+  -webkit-filter: drop-shadow(1px 1px 0 yellow) drop-shadow(-1px -1px 0 yellow);
+  filter: drop-shadow(1px 1px 0 yellow) drop-shadow(-1px -1px 0 yellow);
 }
 
 ul {
@@ -33,15 +40,6 @@ i {
   text-decoration: underline;
 }
 
-header {
-  width: 100%;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-header nav {
+nav {
   background: #fff;
-  padding: 5px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }

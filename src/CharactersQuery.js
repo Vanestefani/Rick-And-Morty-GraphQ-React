@@ -7,6 +7,8 @@ function Consulta() {
         results {
           id
           name
+          image
+          status
         }
       }
     }
@@ -15,9 +17,23 @@ function Consulta() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.characters.results.map(({ id, name }) => (
-    <div key={id}>
-      <p>{name}</p>
+  return data.characters.results.map(({ id, name, image, status }) => (
+    <div key={id} className="card" class="col-4 col-md-3">
+      <img src={image} className="card-img-top" alt="imagen de personaje" />
+      <div class="card-body">
+        <h6 class="card-title text-center">
+          {name} {"  "}
+          <span
+            className={
+              status == "Alive"
+                ? "badge rounded-pill bg-success"
+                : "badge rounded-pill bg-danger"
+            }
+          >
+            {status}
+          </span>
+        </h6>
+      </div>
     </div>
   ));
 }
@@ -25,8 +41,12 @@ function Consulta() {
 export default function CharactersQuery() {
   return (
     <>
-      <h1>Personajes de Rick And Morty</h1>
-      <Consulta />
+      <center>
+        <h1>Characters</h1>
+      </center>
+      <div class="row">
+        <Consulta />
+      </div>
     </>
   );
 }

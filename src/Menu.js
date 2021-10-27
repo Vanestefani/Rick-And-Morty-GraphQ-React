@@ -1,11 +1,14 @@
 import "./menu.css";
+import logo from "./logo.png";
 import { Link } from "react-router-dom";
 export default function Menu() {
   return (
     <>
-      <header>
-        <nav>
-          <div className="logo">Wiki | The Rick and Morty</div>
+      <header class="">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <div className="logo ">
+            <img src={logo} />
+          </div>
 
           <ul>
             <Link to="/" className="link-a">

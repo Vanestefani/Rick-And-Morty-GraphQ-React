@@ -25,7 +25,9 @@ function Consulta() {
 export default function PlacesQuery() {
   return (
     <>
-      <h1>Places</h1>
+      <center>
+        <h1>Places</h1>
+      </center>
       <Consulta />
     </>
   );

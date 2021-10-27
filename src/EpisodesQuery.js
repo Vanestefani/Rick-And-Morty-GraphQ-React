@@ -25,7 +25,9 @@ function Consulta() {
 export default function EpisodesQuery() {
   return (
     <>
-      <h1>Episodes</h1>
+      <center>
+        <h1>Episodes</h1>
+      </center>
       <Consulta />
     </>
   );
